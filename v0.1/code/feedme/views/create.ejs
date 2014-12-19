@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/create.css">
+	<link rel="shortcut icon" href="/images/icon.png">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Lobster|Dosis' rel='stylesheet' type='text/css'>
+	<title>Join feedMe</title>
+	</head>
+	
+
+	<body>
+		<form action="/login"><button id="login">Login</button></form>
+		<div id="input_area">
+			<h1>Create an account:</h1>
+			<p id="message"> <%- message %> </p>
+			<form method="post" action="/create/auth">
+				<input type="text" align=center placeholder="Username" name='username'><br>
+				<input type="password" align=center placeholder="Password" name='password'><br>
+				<input type="password" align=center placeholder="Retype Password" name='retypedPassword'><br>
+				<button id="create">Create</button>
+			</form>
+		</div>
+	</body>
+</html>

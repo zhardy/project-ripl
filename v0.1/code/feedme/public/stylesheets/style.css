@@ -1,0 +1,374 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+	outline: 0;
+}
+
+::-webkit-scrollbar { 
+	display: none; 
+}
+
+html, body {
+	background-color: #404040;
+	overflow: hidden;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+	white-space: nowrap;
+	position: absolute;
+	border: none;
+	margin-top: -1px;
+	overflow: hidden;
+}
+
+#nav, #mainfeed, #nextfeed {
+	overflow: auto;
+	display: inline-block;
+	height: 100%;	
+}
+
+#navtray_color, #navtray_search {
+	overflow: hidden;
+	display: inline-block;
+	height: 100%;
+	padding: 0px;
+}
+
+#nav {
+	overflow:hidden;
+	background-color: #404040;
+	font-family: "Dosis";
+	font-size: 1.5em;
+	width: 3%;
+	padding: 5px;
+	
+}
+
+#navtray_search.disabled, #navtray_color.disabled {
+	overflow:hidden;
+	width: 0%;
+	background-color: #404040;
+	position: relative;
+	padding: 0px;
+	transition:all linear 0.25s;
+}
+
+#navtray_search.active{
+	width: 16.5%;
+	transition:width linear 0.25s;
+}
+
+#navtray_color.active{
+	width: 16.5%;
+	transition:width linear 0.25s;
+}
+
+#colorwheel{
+	width:10%;
+	height: 10%;
+}
+
+#colorwheel:hover{
+	width:90%;
+	height:90%;
+}
+
+#search, #colorpicker, #color {
+	padding-left: 2%;
+}
+
+.icon_button {
+	background: #303030;
+	border: 0px;
+	color: #808080;
+	font-family: "Dosis";
+	font-size: 1em;
+	width: 100%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	margin-top: 25%;
+	margin-bottom: 25%;
+	border-radius: 5px;
+	height: 10%;
+	cursor: pointer;
+	transition: all 500ms;
+}
+
+.icon {
+	width: 85%;
+}
+
+#color, #text_changer {
+	background: #202020;
+	border: 0px;
+	color: #808080;
+	width: 85%;
+	margin: 6%;
+	border-radius: 5px;
+	font-family: "Dosis";
+	font-size: 1em;
+	border-style: none;
+}
+
+
+#search {
+	margin-top: 2%;
+}
+
+#search input {
+	background: #202020;
+	border: 0px;
+	color: #808080;
+	width: 75%;
+	margin: 6%;
+	padding: 5px 15px 5px 15px;
+	border-radius: 5px;
+	font-family: "Dosis";
+	font-size: 1em;
+}
+
+#mainfeed {
+	border: solid 1px #404040;
+	background: #404040;
+	width: 79%;
+	position: relative;
+	left: 0%;
+	margin-left: 0%;
+	padding: 5px;
+	height: 100%;
+}
+
+#nextfeed {
+	background: #404040;
+	width: 16%;
+	overflow: hidden;
+	height:100%;
+	/*position: relative;*/
+	left: 0%;
+	padding: 5px;
+}
+
+.story {
+	margin-bottom: 5px;
+	border: 0px;
+	border-radius: 5px;
+	background-color: #303030;
+	font-family: "News Cycle";
+}
+
+.story_container {
+	padding: 1% 1%;
+}
+
+.story_container h2 {
+	padding: 0.5% 2% 1% 2%;
+	border-radius: 5px;
+	background-color: #383838;
+	margin-bottom: 1%;
+	font-size: 1.5em;
+}
+
+.story_container a {
+	text-decoration: none;
+	white-space: pre-line;
+}
+
+#text_changer.white{
+	color: #ffffff;
+}
+
+#text_changer.black{
+	color: #000000;
+}
+
+.story_container p {
+	padding: 1% 5%;
+	white-space: pre-wrap;
+	font-size: 1.125em;
+}
+
+.story_container .timestamp {
+	padding: 1% 2.5%;
+	margin: 0;
+	color: #c0c0c0;
+	border-radius: 5px;
+	font-size: 1em;
+}
+
+
+.filters {
+	display:inline-block;
+}
+
+.filter-links:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+
+.filter-links li {
+	margin-right: 5px;
+	float:left;
+	list-style:none;
+}
+
+.filter-links a {
+	padding:9px 15px;
+	display:inline-block;
+	border-radius:5px;
+	/*background:#404040;*/
+	font-size:16px;
+	font-family: "Dosis";
+	color:#ffffff;
+	transition:all 500ms;
+	text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+	/*background:#202020;*/
+}
+
+/*----- Content of Tabs -----*/
+.filter-content {
+	padding:15px;
+	border-radius:5px;
+	background:#fff;
+}
+
+.filter {
+	display:none;
+}
+
+.filter.active {
+	display:block;
+}
+
+#addfilter {
+	cursor: pointer;
+}
+
+.pop-up{
+	visibility:hidden;
+	position: absolute;
+	margin:auto;
+	top: 0; 
+	left: 0;
+	bottom: 0; 
+	right: 0;
+	width:50%;
+	height:50%;
+	text-align: center;
+	border-radius: 5px;
+	padding: 2%;
+	font-family: "Dosis";
+	font-size: 1em;
+	overflow: scroll;
+}
+
+#name_filter {
+	background: #202020;
+	border: 0px;
+	color: #ffffff;
+	width: 75%;
+	margin: 1%;
+	padding: 5px 15px 5px 15px;
+	border-radius: 5px;
+	font-family: "Dosis";
+	font-size: 1em;
+}
+
+#filter_checkbox {
+	margin: 1%;
+	padding: 1%;
+	border-radius: 5px;
+	background-color: #303030;
+}
+
+#checky {
+	padding: 2%;
+	margin: 2%;
+	border-radius: 5px;
+}
+
+.pop-up.active{
+	visibility:visible;
+}
+
+#filter_checkbox{
+	text-align: left;
+}
+
+#logout{
+	margin: 1%;
+   	padding: 1%;
+	background-color: #404040;
+	color: #ffffff;
+	border:none;
+	cursor: pointer;
+	font-family: "Lobster";
+	font-size: 1.5em;
+	border-radius: 5px;
+	width: 85%;
+}
+
+.source_button{
+   	padding: 1%;
+   	margin-left: 5%;
+	background-color: #404040;
+	color: #ffffff;
+	border:none;
+	cursor: pointer;
+	font-family: "Lobster";
+	font-size: 1.5em;
+	border-radius: 5px;
+	width: 90%;
+}
+
+.feeders_feed{
+	visibility:hidden;
+	position: absolute;
+	margin:auto;
+	top: 5%; 
+	left: 5%;
+	bottom: 2%; 
+	right: 20%;
+	width:auto;
+	height:auto;
+	text-align: center;
+	border-radius: 5px;
+	padding: 2%;
+	font-family: "Dosis";
+	font-size: 1em;
+	background-color: #000000;
+	overflow: scroll;
+}
+.feeders_feed.active{
+	visibility: visible;
+}
+
+.message, .feeder {
+	padding: 0 2%;
+	font-family: "News Cycle";
+	font-size: 1.25em;
+	white-space: pre-line;
+}
+ 
+.feeder{
+	cursor: pointer;
+	margin: 5%;
+   	padding: 0% 5%;
+	background-color: #404040;
+	color: #ffffff;
+	border:none;
+	font-size: 1.5em;
+	border-radius: 5px;
+	width: 80%;
+}

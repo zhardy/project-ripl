@@ -1,0 +1,25 @@
+<%include header %>
+
+<h1><%= title %></h1>
+
+<!-- Expression Evaluation: -->
+<p>Welcome to <%= title %></p>
+
+<!-- Executing JS and Generating HTML: -->
+<h3>Items in Database</h3>
+
+<% if (items.length === 0) { %>
+  <p>There are currently no items in the database</p>
+<% } else { %>
+<ul>
+<% items.forEach(function (item) { %>
+  <li><title class="item title"><%= item.title %></title>
+  	  <date class="item pub date"><%= item.date %></date>
+  	  <link class="item link"><%= item.link %></link>
+  </li>
+  <li>
+<% }); %>
+</ul>
+<% } %>
+
+<%include footer %>

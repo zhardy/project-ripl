@@ -1,0 +1,63 @@
+
+*:focus {
+    outline: 0;
+}
+
+body {
+	background-color: #404040;
+}
+
+#input_area {
+	margin-top: 10%;
+}
+
+h1 {
+	color: #808080;
+	text-align: center;
+	font-family: "Lobster";
+	font-size: 2.45em;
+}
+
+input, button {
+	padding: 5px;
+	color: #909090;
+	background-color: #363636;
+	border: none;
+	display: block;
+	border-radius: 5px;
+}
+
+input {
+	width: 20%;
+	margin: 0 auto;
+	font-family: "Dosis";
+	font-size: 1em;
+	color: #ffffff;
+}
+
+button {
+	cursor: pointer;
+	font-family: "Lobster";
+	font-size: 1.5em;
+	width: 15%;
+}
+
+#message {
+	text-align:center;
+	font-family: "Dosis";
+	font-size: 1.25em;
+	color: #ff8080;
+}
+
+#login {
+	position: absolute;
+	top:1%;
+   	right:0.5%;
+
+}
+
+#create {
+	margin: 1% auto;
+	display: block;
+	padding: 0.25%;
+}

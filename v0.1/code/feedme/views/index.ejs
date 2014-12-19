@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+		<link rel="shortcut icon" href="/images/icon.png">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="farbtastic/farbtastic.js"></script>
+		<link rel="stylesheet" href="farbtastic/farbtastic.css" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Lobster|Dosis|Playfair+Display|News+Cycle' rel='stylesheet' type='text/css'>
+		<title>feedMe</title>
+	</head>
+	<body>
+		
+		<div id="wrapper"><!--
+
+			--><div id="nav" class="disabled">
+				<a><button id="home_icon" class="icon_button">HO<br>ME</button></a><br>
+				<button id="search_icon" class="icon_button"><img id="search_icon_img" class="icon" src="http://youth.ag.org/global/images/icons/search-dark.png"></button><br>
+
+				<button id="color_icon" class="icon_button"><img id="color_icon_img" class="icon" src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/38/BYR_color_wheel.svg/256px-BYR_color_wheel.svg.png"></button>
+			</div><!--
+
+	 		--><div id="navtray_search" class="disabled">
+				<form id="search" class="nav_item">
+
+					<br><input type="text" placeholder="Add source" name="newSource"><br>
+					<button class ="source_button" type="submit" formmethod="post" formaction="/newSource">Add new source</button>
+					<br><input type="text" placeholder="Add feeder" name="newFeeder"><br>
+					<button class ="source_button" type="submit" formmethod="post" formaction="/newFeeder">Add feeder</button>
+
+				</form>
+			
+			</div><!--
+
+			 --><div id="navtray_color" class="disabled">
+				<div id="colorpicker"></div>
+				<form><input type="text" id="color" name="color" value="#123456" /></form><br>
+				<button id="text_changer">change text color</button>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#colorpicker').farbtastic('#color');
+					});
+				</script>
+			
+			</div><!--
+	           
+	 		--><div id="mainfeed">
+
+				<div class="filters">
+					<ul class="filter-links">
+						<li class="active"><a href="#filter1">All</a></li>
+						<% if(filters !== undefined) { %>
+						<% for(var i=0; i<filters.length; i++){ %>
+							<li><a href= <%-'#filter' + (i+2) %> > <%-filters[i].filterName %></a></li>
+						<% }%>
+						<% } %>
+
+						<li><a id="addfilter">+</a></li>
+					</ul>
+				</div>
+				<div id="filter1" class="filter active">
+					<% if(items != undefined){ %>
+						<% items.forEach( function(entry){ %>
+							<div class = "story">
+								<div class="story_container">
+									<a href= <%= entry.link %> ><h2> <%-entry.title%> | <%=entry.meta.title%> </h2></a>
+									<p> <%- entry.summary %>  </p>
+									<p class = "timestamp"> <%= entry.pubdate %> </p>
+								</div>
+							</div>
+						<%});%>
+					<%} else {%>
+						<h5 class="message"> You are not subscribed to any sources! </h5>
+					<%}%>
+				</div>
+
+
+				<% if(filters) { %>
+				<% for(var j=0; j<filters.length; j++){ %>
+				<em>
+				<div class="filter" id= <%= 'filter' + (2+j) %>  >
+					<% filters[j].arrayOfArticles.forEach( function(entry){ %>
+					<div class = "story">
+						<div class="story_container">
+							<a href= <%= entry.link %> ><h2> <%-entry.title%> | <%=entry.meta.title%> </h2></a>
+							<p> <%- entry.summary %>  </p>
+							<p class = "timestamp"> <%= entry.pubdate %> </p>
+						</div>
+					</div>
+				</em>
+					<%});%>
+						
+				</div>
+				<% }%>
+				<% } %>
+			
+			</div>
+
+	 		<div id="nextfeed" class="feed">
+				<form action="/logout"><button id="logout" class="logout_button">Logout</button></form>
+				<% if(feeders != undefined){ %>
+					<ul>
+						<%feeders.forEach( function (entry){%>
+							<li class = "feeder"> <%-entry.User.username%> </li>
+							<div class = "feeders_feed">
+								<div class="feeder-pop">
+									<% entry.arrayOfArticles.forEach( function(article){ %>
+										<div class = "story">
+											<div class="story_container">
+												<a href= <%= article.link %> ><h2> <%-article.title%> | <%=article.meta.title%> </h2></a>
+												<p> <%- article.summary %>  </p>
+												<p class = "timestamp"> <%= article.pubdate %> </p>
+											</div>
+										</div>
+									<%});%>
+								</div> 
+							</div>
+							<% }); %>
+					</ul>
+				<%} else {%>
+					<p class="message"> You are not subscribed to any feeders </p>
+				<%}%>
+			
+			</div>
+		</div>
+		<em>
+		<div class="pop-up">
+			<form>Filter Settings<br><input id="name_filter" type="text" name="filterName" value="filter"><br>Sources: <br>
+				<div id = "filter_checkbox">
+					
+					<%if(sources !== undefined){ %>
+
+					<% for(var i =0; i<sources.length; i++){ %>
+					<input type="checkbox" value=<%-sources[i].sourceid %> id="checky" name="filterSources" checked><%-sources[i].sourcelink %> <br>
+					<%	} %>
+
+					<button class = "source_button" type="submit" formmethod="post" formaction="/filterForm">Update</button>
+					<%} else {%>
+						<h3 class="message"> You are not subscribed to any sources </h3>
+						<% } %>
+
+				</div>
+			</form>	
+		</div>
+	</em>
+
+
+
+		<script type="text/javascript" src="/javascripts/index.js"></script>
+	</body>
+</html>
