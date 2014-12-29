@@ -5,28 +5,37 @@
 }
 
 ::-webkit-input-placeholder {
-   color: #000;
+   color: #888;
 }
 
 :-moz-placeholder {
-   color: #000;  
+   color: #888;  
 }
 
 ::-moz-placeholder {
-   color: #000;  
+   color: #888;  
 }
 
 :-ms-input-placeholder {  
-   color: #000;  
+   color: #888;  
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('PTS55F-webfont.eot');
+    src: url('PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTS55F-webfont.woff') format('woff'),
+         url('PTS55F-webfont.ttf') format('truetype'),
+         url('PTS55F-webfont.svg#pt_sansregular') format('svg');
 }
 
 body {
 	color: #000;
-	background-color: #aaa;
+	background-color: #EDEAE0;
 }
 
 h1 {
-	margin: 6% 0;
+	margin-top: 10%;
 	text-align: center;
 	font-family: "Lobster";
 	font-size: 6em;
@@ -35,24 +44,32 @@ h1 {
 p {
 	margin: 1% 0;
 	text-align: center;
-	font-family: "Dosis";
+	font-family: "PT Sans";
+}
+
+form {
+	text-align: center;
 }
 
 input, button {
-	display: block;
-	margin: 0 auto;
+	margin: 5px 3px;
 	padding: 5px;
 	border: none;
 	border-radius: 2px;
-	background-color: #ccc;
+	background-color: #dddad0;
 	color: #000;
-	font-family: "Dosis";
+	font-family: "PT Sans";
 }
 
-input {
-	width: 10%;
+.name {
+	width: 5%;
+}
+
+#email {
+	width: 11%;
 }
 
 button {
 	width: 5%;
+	font-weight: bold;
 }
