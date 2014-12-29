@@ -48,10 +48,24 @@ h1 {
 	-webkit-text-fill-color: transparent;
 }
 
+h3 {
+	margin: 0;
+	text-align: center;
+	font-family: "PT Sans";
+	font-size: 2em;
+	font-weight: normal;
+	letter-spacing: -3px;
+	background: -webkit-linear-gradient(#6080a0, #006060);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 p {
 	margin: 1% 0;
 	text-align: center;
 	font-family: "PT Sans";
+	letter-spacing: -1px;
+	color: #246;
 }
 
 form {
@@ -78,5 +92,7 @@ input, button {
 
 button {
 	width: 5%;
+	font-size: 15px;
 	font-weight: bold;
+	color: #246;
 }
