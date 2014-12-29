@@ -5,19 +5,19 @@
 }
 
 ::-webkit-input-placeholder {
-   color: #888;
+   color: #adaaa0;
 }
 
 :-moz-placeholder {
-   color: #888;  
+   color: #adaaa0;  
 }
 
 ::-moz-placeholder {
-   color: #888;  
+   color: #adaaa0;  
 }
 
 :-ms-input-placeholder {  
-   color: #888;  
+   color: #adaaa0;  
 }
 
 @font-face {
@@ -29,6 +29,11 @@
          url('PTS55F-webfont.svg#pt_sansregular') format('svg');
 }
 
+@font-face {
+    font-family: 'Kumiz FY';
+    src: url('Fontyou - Kumiz FY Regular.ttf') format('truetype');
+}
+
 body {
 	color: #000;
 	background-color: #EDEAE0;
@@ -37,8 +42,13 @@ body {
 h1 {
 	margin-top: 10%;
 	text-align: center;
-	font-family: "Lobster";
-	font-size: 6em;
+	font-family: "Kumiz FY";
+	font-size: 7em;
+	font-weight: normal;
+	letter-spacing: -7px;
+	background: -webkit-linear-gradient(#6080a0, #006060);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 p {
