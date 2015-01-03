@@ -318,15 +318,7 @@ function addSource(sourceLink, callback){
 }
 
 function getUserSources(userID, callback){
-
-	getUsersSubscribedSourceID(userID, function (error, sourceIDS){
-		
-		if(error){
-
-			callback(error);
-		}
-		else{
-			pg.connect(connString, function (err, client, done){
+		pg.connect(connString, function (err, client, done){
 				if(err){
 					callback(err);
 				}
@@ -344,8 +336,6 @@ function getUserSources(userID, callback){
 				}
 			});
 			pg.end();
-		}
-	});
 }
 						
 
