@@ -1,8 +1,33 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+	outline: 0;
+	padding: 0;
+	margin: 0;
 }
 
-a {
-  color: #00B7FF;
+html, body {
+	height: 100%;
+}
+
+#wrapper {
+	height: 100%
+}
+
+.column {
+	display: inline-block;
+	height: 100%;
+}
+
+#nav {
+	width: 3%;
+	background-color: #222;
+}
+
+#feed {
+	width: 82%;
+	background-color: #333;
+}
+
+#feeders {
+	width: 15%;
+	background-color: #444;
 }
