@@ -1,20 +1,20 @@
 * {
-	outline: 0;
-	padding: 0;
-	margin: 0;
+	outline: 0px;
+	padding: 0px;
+	margin: 0px;
 	min-height: 100%;
 }
 
 ::-webkit-input-placeholder {
-   color: #266;
+   color: #488;
 }
 
 ::-moz-placeholder {
-   color: #266;  
+   color: #488;  
 }
 
 :-ms-input-placeholder {  
-   color: #266;  
+   color: #488;  
 }
 
 @font-face {
@@ -75,22 +75,22 @@ form {
 }
 
 input, button {
-	margin: 1% 1%;
+	margin: 0.5%;
 	padding: 0.5%;
 	border: none;
 	border-radius: 2px;
-	background-color: #6ab;
+	background-color: #6cd;
 	color: #246;
 	font-family: "PT Sans";
-	background: #5bc;
+	letter-spacing: -1px;
 }
 
 .name {
-	width: 7.5%;
+	width: 10%;
 }
 
 #email {
-	width: 16.75%;
+	width: 22%;
 }
 
 button {
