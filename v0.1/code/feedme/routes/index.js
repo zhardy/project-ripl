@@ -22,13 +22,10 @@ router.get('/', function(req, res) {
 					if(feedersFromDB.length <= 0){
 						feeders = undefined;
 						res.render('index', {items:items, feeders: feeders, sources: sources, filters:userFilters});
-
 					}
 					else{
-						rss.filtersFeed(feedersFromDB, function (finalFeeders){
-						feeders = finalFeeders;
+						feeders = feedersFromDB;
 						res.render('index', {items:items, feeders: feeders, sources: sources, filters:userFilters});
-						});
 					}
 				});
 			}
@@ -54,11 +51,8 @@ router.get('/', function(req, res) {
 										res.render('index', {items:items, feeders: feeders, sources: sources, filters:userFilters});
 									}
 									else{
-
-										rss.filtersFeed(feedersFromDB, function (finalFeeders){
-										feeders = finalFeeders;
+										feeders = feedersFromDB;
 										res.render('index', {items:items, feeders: feeders, sources: sources, filters:userFilters});
-									});
 									}
 									});
 							}
@@ -73,10 +67,8 @@ router.get('/', function(req, res) {
 									}
 									else{
 
-										rss.filtersFeed(feedersFromDB, function (finalFeeders){
-										feeders = finalFeeders;
+										feeders = feedersFromDB;
 										res.render('index', {items:items, feeders: feeders, sources: sources, filters:userFilters});
-									});
 									}
 									});
 		
@@ -193,6 +185,19 @@ router.post('/newFeeder', function(req, res){
 	setTimeout(function (){
 		res.redirect('/');
 	}, 1000);
+});
+
+router.post('/feeder', function(req, res){
+	var id = req.body.feederID;
+	db.processQuery('get user sources', [id], function (err, sourceArray){
+		var tempArray = [];
+		sourceArray.forEach ( function (entry){
+		tempArray.push(entry.sourcelink);
+		});
+		rss.feed(tempArray, undefined, function (finalArticles){
+			res.json({articles : finalArticles});
+		});
+	});
 });
 
 
