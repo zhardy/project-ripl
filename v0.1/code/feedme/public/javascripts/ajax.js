@@ -21,4 +21,12 @@ function feeder(id){
     $('div#feeder-pop').append(html);
   });
 }
-	
+
+function newFeeder(){
+	$.ajax({
+    type : 'POST',
+    url  : '/newFeeder',
+    data : { feederID: id },
+    dataType : 'json'
+  }).done();
+}
