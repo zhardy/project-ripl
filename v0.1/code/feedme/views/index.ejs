@@ -4,8 +4,6 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 		<link rel="shortcut icon" href="/images/icon.png">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script type="text/javascript" src="farbtastic/farbtastic.js"></script>
 		<link rel="stylesheet" href="farbtastic/farbtastic.css" type="text/css" />
 		<link href='http://fonts.googleapis.com/css?family=Lobster|Dosis|Playfair+Display|News+Cycle' rel='stylesheet' type='text/css'>
 		<title>feedMe</title>
@@ -22,14 +20,11 @@
 			</div><!--
 
 	 		--><div id="navtray_search" class="disabled">
-				<form id="search" class="nav_item">
-
 					<br><input type="text" placeholder="Add source" name="newSource"><br>
 					<button class ="source_button" type="submit" formmethod="post" formaction="/newSource">Add new source</button>
-					<br><input type="text" placeholder="Add feeder" name="newFeeder"><br>
-					<button class ="source_button" type="submit" formmethod="post" formaction="/newFeeder">Add feeder</button>
+					<br><input type="text" placeholder="Add feeder" name='newFeeder'><br>
+					<button class ="source_button" onclick="newFeeder()">Add feeder</button>
 
-				</form>
 			
 			</div><!--
 
@@ -134,10 +129,12 @@
 			</form>	
 		</div>
 	</em>
-
-
-
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="farbtastic/farbtastic.js"></script>
 		<script type="text/javascript" src="/javascripts/index.js"></script>
 		<script type="text/javascript" src="/javascripts/ajax.js"></script>
+
+
+
 	</body>
 </html>

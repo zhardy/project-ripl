@@ -164,9 +164,7 @@ router.post('/newSource', function(req, res){
 
 router.post('/newFeeder', function(req, res){
 	var user = req.session.user;
-	var newFeeder = req.body.newFeeder;
-
-
+	var newFeeder = req.body.newFeederName;
 	db.processQuery('get user id', [newFeeder], function (errorGettingID, userID){
 		if(errorGettingID){
 			console.log(errorGettingID);
@@ -177,14 +175,11 @@ router.post('/newFeeder', function(req, res){
 					console.log(errorSubscribingToFeeder);
 				}
 				else{
-					console.log(success);
+					res.json({newFeederID: userID});
 				}
 			});
 		}
 	});
-	setTimeout(function (){
-		res.redirect('/');
-	}, 1000);
 });
 
 router.post('/feeder', function(req, res){

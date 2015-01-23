@@ -23,10 +23,42 @@ function feeder(id){
 }
 
 function newFeeder(){
+  var value = $("input[name='newFeeder'");
+  var newFeeder = value.val();
+  console.log(newFeeder);
 	$.ajax({
     type : 'POST',
     url  : '/newFeeder',
-    data : { feederID: id },
+    data : { newFeederName: newFeeder },
     dataType : 'json'
-  }).done();
+  }).done( function (data){
+    var html = "";
+    $("input[name='newFeeder'").val('');
+    // if( $('div#nextfeed p.message') === undefined){
+      html = '<button id="feeder" class="feeder" onclick= "feeder(' + data.newFeederID + ')">' + newFeeder + '</button>';
+      html = html + "<div class = 'feeders_feed' id='feeders_feed'>";
+      html = html + "<div class='feeder-pop' id='feeder-pop'>";
+      html = html + "</div>";
+      html = html + "</div> <br>";
+    if($('div#nextfeed p.message').length === 0){    
+      $('div#nextfeed').append(html);
+    }
+    else{
+      $('div#nextfeed').empty();
+      html = "<form action='/logout'><button id='logout' class='logout_button'>Logout</button></form>" + html;
+      $('div#nextfeed').append(html);
+    }
+
+
+    // }
+    // else{
+
+    // }
+          //     <button id="feeder" class="feeder" onclick= <%- "'feeder(" + entry.User.uid + ")'"%> ><%-entry.User.username%></button>
+          //   <div class = "feeders_feed" id="feeders_feed">
+          //     <div class="feeder-pop" id="feeder-pop">
+          //     </div>
+          //   </div>
+          // <br>
+  });
 }
