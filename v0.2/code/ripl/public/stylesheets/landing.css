@@ -1,57 +1,101 @@
 * {
+	outline: 0;
 	padding: 0;
 	margin: 0;
+	min-height: 100%;
 }
 
 ::-webkit-input-placeholder {
-   color: #000;
-}
-
-:-moz-placeholder {
-   color: #000;  
+   color: #488;
 }
 
 ::-moz-placeholder {
-   color: #000;  
+   color: #488;  
 }
 
 :-ms-input-placeholder {  
-   color: #000;  
+   color: #488;  
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('PTS55F-webfont.eot');
+    src: url('PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTS55F-webfont.woff') format('woff'),
+         url('PTS55F-webfont.ttf') format('truetype'),
+         url('PTS55F-webfont.svg#pt_sansregular') format('svg');
+}
+
+@font-face {
+    font-family: 'Kumiz FY';
+    src: url('Fontyou - Kumiz FY Regular.ttf') format('truetype');
 }
 
 body {
 	color: #000;
-	background-color: #aaa;
+	background: linear-gradient(to top, #4ee, #ace);
 }
 
 h1 {
-	margin: 6% 0;
+	margin-top: 10%;
 	text-align: center;
-	font-family: "Lobster";
-	font-size: 6em;
+	font-family: "Kumiz FY";
+	font-size: 10em;
+	font-weight: normal;
+	letter-spacing: -12px;
+	color: #246;
+	background: -webkit-linear-gradient(#6080a0, #006060);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h3 {
+	margin: 0;
+	text-align: center;
+	font-family: "PT Sans";
+	font-size: 2em;
+	font-weight: normal;
+	letter-spacing: -3px;
+	color: #246;
+	background: -webkit-linear-gradient(#6080a0, #006060);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 p {
 	margin: 1% 0;
 	text-align: center;
-	font-family: "Dosis";
+	font-family: "PT Sans";
+	letter-spacing: -1px;
+	color: #246;
+}
+
+form {
+	text-align: center;
 }
 
 input, button {
-	display: block;
-	margin: 0 auto;
-	padding: 5px;
+	margin: 0.5%;
+	padding: 0.5%;
 	border: none;
 	border-radius: 2px;
-	background-color: #ccc;
-	color: #000;
-	font-family: "Dosis";
+	background-color: #6cd;
+	color: #246;
+	font-family: "PT Sans";
+	letter-spacing: -1px;
 }
 
-input {
+.name {
 	width: 10%;
 }
 
+#email {
+	width: 22%;
+}
+
 button {
-	width: 5%;
+	width: 7.5%;
+	font-size: 15px;
+	font-weight: bold;
+	color: #246;
 }

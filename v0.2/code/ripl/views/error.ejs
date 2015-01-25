@@ -1,3 +1,12 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ripl.me</title>
+		<link rel='stylesheet' href='/stylesheets/error.css' />
+	</head>
+	<body>
+		<h1>It seems there is an error.</h1>
+		<h2><%= error.status %>: <%= message %></h2>
+		<pre>Stack trace (for debugging):<br><br><%= error.stack %></pre>
+	</body>
+</html>
