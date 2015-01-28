@@ -28,12 +28,14 @@ html, body {
 }
 
 #nav {
+	position: fixed;
 	padding: 0;
 	width: 5%;
 	background-color: #ddd;
+	border-right: solid 1px #040;
 	background: linear-gradient(to right, #161, #060);
-	box-shadow: 0px 0px 50px #000000;
-	z-index: 10;
+	box-shadow: 0px 0px 10px #050;
+	z-index: 99;
 }
 
 #nav button {
@@ -41,6 +43,7 @@ html, body {
 	display: block;
 	width: 75%;
 	height: 7.5%;
+	color: white;
 	background-color: transparent;
 	border: none;
 	border-radius: 2px;
@@ -48,8 +51,8 @@ html, body {
 }
 
 #feed {
-	padding: 1%;
-	width: 80%;
+	padding: 1% 1% 1% 7.5%;
+	width: 85%;
 	background-color: #fff;
 }
 
