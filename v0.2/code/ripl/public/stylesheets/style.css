@@ -39,6 +39,7 @@ html, body {
 	display: block;
 	width: 75%;
 	height: 7.5%;
+	background-color: transparent;
 	border: none;
 	border-radius: 2px;
 	cursor: pointer;
