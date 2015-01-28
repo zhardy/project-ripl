@@ -32,6 +32,8 @@ html, body {
 	width: 5%;
 	background-color: #ddd;
 	background: linear-gradient(to right, #161, #060);
+	box-shadow: 0px 0px 50px #000000;
+	z-index: 10;
 }
 
 #nav button {
