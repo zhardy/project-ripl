@@ -127,7 +127,7 @@ input, button {
 }
 
 input:focus {
-	box-shadow: 0px 0px 10px #266;
+	box-shadow: inset 0px 0px 25px rgba(255,255,255,0.5);
 }
 
 .name {

@@ -34,7 +34,7 @@ html, body {
 	background-color: #ddd;
 	border-right: solid 1px #040;
 	background: linear-gradient(to right, #161, #060);
-	box-shadow: 0px 0px 10px #050;
+	box-shadow: 0px 0px 5px #050;
 	z-index: 99;
 }
 
