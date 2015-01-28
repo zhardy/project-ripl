@@ -6,6 +6,7 @@ h1, h2 {
 	font-family: sans-serif;
 	text-align: center;
 	color: #333;
+	text-shadow: 0 0 5px #888;
 }
 
 h1 {
@@ -24,4 +25,5 @@ pre {
 	border: solid 1px #aaa;
 	background-color: #bbb;
 	font-family: monospace;
+	box-shadow: 0 0 10px #888;
 }

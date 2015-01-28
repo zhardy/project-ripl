@@ -22,35 +22,42 @@ html, body {
 	display: inline-block;
 	vertical-align: top;
 	height: 100%;
-	padding: 1%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 #nav {
-	padding: 0.5%;
+	position: fixed;
+	padding: 0;
 	width: 5%;
 	background-color: #ddd;
+	border-right: solid 1px #040;
+	background: linear-gradient(to right, #161, #060);
+	box-shadow: 0px 0px 10px #050;
+	z-index: 99;
 }
 
 #nav button {
-	margin: 0.5%;
+	margin: 15% 10% 0 10%;
 	display: block;
-	width: 100%;
+	width: 75%;
 	height: 7.5%;
-	background-color: #eee;
+	color: white;
+	background-color: transparent;
 	border: none;
 	border-radius: 2px;
 	cursor: pointer;
 }
 
 #feed {
-	width: 80%;
-	background-color: #eee;
+	padding: 1% 1% 1% 7.5%;
+	width: 85%;
+	background-color: #fff;
 }
 
 #feeders {
+	padding: 1%;
 	width: 15%;
 	background-color: #ddd;
 }
