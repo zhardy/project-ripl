@@ -8,12 +8,14 @@
 	<body>
 			<h1>Ripl</h1>
 			<h3>Coming soon!</h3>
-			<p>Register here to be notified:</p>
-			<form method="post">
-				<input class="name" type="text" placeholder="First name" name="fname"><!--
-				--><input class="name" type="text" placeholder="Last name" name="lname"><br>
-				<input id="email" type="text" placeholder="Email" name="email"><br>
-				<button>Notify Me!</button>
-			</form>
+				<div>
+					<p>Register here to be notified:</p>
+					<input class="name" type="text" placeholder="First name" name="fname">
+					<input class="name" type="text" placeholder="Last name" name="lname"><br>
+					<input id="email" type="text" placeholder="Email" name="email"><br>
+					<button onclick='signup()'>Notify Me!</button>
+				</div>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script type="text/javascript" src="/javascripts/ajax.js"></script>
 	</body>
 </html>
