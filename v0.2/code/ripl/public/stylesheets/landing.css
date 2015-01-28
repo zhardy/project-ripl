@@ -9,15 +9,15 @@
 }
 
 ::-webkit-input-placeholder {
-   color: #488;
+   color: #466;
 }
 
 ::-moz-placeholder {
-   color: #488;  
+   color: #466;  
 }
 
 :-ms-input-placeholder {  
-   color: #488;  
+   color: #466;  
 }
 
 @font-face {
@@ -34,12 +34,16 @@
     src: url('Fontyou - Kumiz FY Regular.ttf') format('truetype');
 }
 
-body {
-	color: #000;
-	/*background: linear-gradient(to top, #4ee, #ace);*/
+html {
+	height: 100%;
 }
 
-h1 {
+body {
+	color: #000;
+	background: linear-gradient(to top, #4cc, #ace);
+}
+
+/*h1 {
 	margin-top: 10%;
 	text-align: center;
 	font-family: "Kumiz FY";
@@ -50,7 +54,7 @@ h1 {
 	background: -webkit-linear-gradient(#6080a0, #006060);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-}
+}*/
 
 #background {
 	position: absolute;
@@ -74,13 +78,13 @@ h1 {
 }
 
 #logo {
-	width: 15%;
-	height: auto;
+	/*width: 30%;*/
+	/*height: auto;*/
 	display: block;
-	margin: 10% auto 5% auto;
+	margin: 2% auto 1% auto;
 	opacity: 0.75;
 	border-radius: 10px;
-	box-shadow: 0px 0px 50px #000000;
+	/*box-shadow: 0px 0px 50px #000000;*/
 }
 
 h3 {
@@ -113,13 +117,17 @@ form {
 input, button {
 	margin: 0.5%;
 	padding: 0.5%;
-	border: none;
+	border-style: none;
 	border-radius: 2px;
-	background-color: #6cd;
-	color: #246;
+	background-color: #6dd;
+	color: #046;
 	font-family: "PT Sans";
 	letter-spacing: -1px;
-	box-shadow: 0px 0px 1px #000000;
+	box-shadow: 0px 0px 1px #266;
+}
+
+input:focus {
+	box-shadow: 0px 0px 8px #266;
 }
 
 .name {
