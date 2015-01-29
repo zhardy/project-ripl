@@ -27,15 +27,23 @@ html, body {
 	box-sizing: border-box;
 }
 
-#nav {
+
+#nav{
+	visibility: hidden;
+	position: fixed;
+	z-index: 98;
+	padding-top: 10%;
+}
+
+#nav.active {
+	visibility: visible;
 	position: fixed;
 	padding: 0;
 	width: 5%;
 	background-color: #ddd;
 	border-right: solid 1px #040;
 	background: linear-gradient(to right, #161, #060);
-	box-shadow: 0px 0px 5px #050;
-	z-index: 99;
+	box-shadow: 0px 0px 10px #050;
 }
 
 #nav button {
@@ -49,6 +57,20 @@ html, body {
 	border-radius: 2px;
 	cursor: pointer;
 }
+
+#home_button{
+	margin: 1% 1% 0 1%;
+	position: fixed;
+	visibility: visible;
+	z-index: 99;
+	display: block;
+	color: black;
+	background-color: transparent;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
 
 #feed {
 	padding: 1% 1% 1% 7.5%;
