@@ -1,0 +1,10 @@
+$('#home_button').click(function(){
+	if($("#nav").hasClass('active')){
+		console.log("if");
+	$('#nav').removeClass('active');
+}
+    else{
+    	console.log("else");
+    $('#nav').addClass('active');
+}
+});
