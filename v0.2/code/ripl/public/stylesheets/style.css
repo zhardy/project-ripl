@@ -4,8 +4,8 @@
 	margin: 0;
 }
 
-::-webkit-scrollbar { 
-	display: none; 
+::-webkit-scrollbar {
+	display: none;
 }
 
 html, body {
@@ -39,11 +39,12 @@ html, body {
 	visibility: visible;
 	position: fixed;
 	padding: 0;
+	padding-top: 10%;
 	width: 5%;
 	background-color: #ddd;
 	border-right: solid 1px #040;
 	background: linear-gradient(to right, #161, #060);
-	box-shadow: 0px 0px 10px #050;
+	box-shadow: 0px 0px 5px #888;
 }
 
 #nav button {
@@ -66,7 +67,7 @@ html, body {
 	display: block;
 	color: black;
 	background-color: transparent;
-	border: none;
+	border: solid 1px black;
 	border-radius: 2px;
 	cursor: pointer;
 }
