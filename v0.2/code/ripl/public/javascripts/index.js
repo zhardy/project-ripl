@@ -1,21 +1,8 @@
-$('html').click(function(){
-	console.log("html");
-	$('#nav').removeClass('active');
-
-});
-
-$('#nav').click(function(e){
-e.stopPropagation();
-});
-
-$('#home_button').click(function(e){
-	if($("#nav").hasClass('active')){
-		console.log("if");
-	$('#nav').removeClass('active');
-}
-    else{
-    	console.log("else");
-    $('#nav').addClass('active');
-}
-e.stopPropagation();
+$(".story_menu_button").hover(function(e) {
+    $('.story_menu_pop').css({
+        "left": e.pageX +1,
+        "top": e.pageY + 1
+    }).stop().show(100);
+}, function() {
+    $('.story_menu_pop').hide();
 });

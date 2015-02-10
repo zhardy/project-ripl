@@ -79,7 +79,7 @@ html, body {
 	color: #808080;
 }
 
-.story_button {
+.story_menu_button {
 	position: absolute;
 	border: none;
 	padding: 5px 10px;
@@ -99,4 +99,16 @@ html, body {
 	padding: 1%;
 	width: 15%;
 	background-color: #ddd;
+}
+
+.story_menu_pop{
+	position: absolute;
+	z-index: 99;
+    display: none;
+    background: #ccc;
+    border: 1px solid #2B2B2B;
+    border-radius: 25px;
+    color:white;
+    background-color: #2B2B2B
+
 }
