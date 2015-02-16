@@ -4,8 +4,6 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 		<link rel="shortcut icon" href="/images/icon.png">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script type="text/javascript" src="farbtastic/farbtastic.js"></script>
 		<link rel="stylesheet" href="farbtastic/farbtastic.css" type="text/css" />
 		<link href='http://fonts.googleapis.com/css?family=Lobster|Dosis|Playfair+Display|News+Cycle' rel='stylesheet' type='text/css'>
 		<title>feedMe</title>
@@ -22,14 +20,11 @@
 			</div><!--
 
 	 		--><div id="navtray_search" class="disabled">
-				<form id="search" class="nav_item">
-
 					<br><input type="text" placeholder="Add source" name="newSource"><br>
 					<button class ="source_button" type="submit" formmethod="post" formaction="/newSource">Add new source</button>
-					<br><input type="text" placeholder="Add feeder" name="newFeeder"><br>
-					<button class ="source_button" type="submit" formmethod="post" formaction="/newFeeder">Add feeder</button>
+					<br><input type="text" placeholder="Add feeder" name='newFeeder'><br>
+					<button class ="source_button" onclick="newFeeder()">Add feeder</button>
 
-				</form>
 			
 			</div><!--
 
@@ -100,31 +95,21 @@
 	 		<div id="nextfeed" class="feed">
 				<form action="/logout"><button id="logout" class="logout_button">Logout</button></form>
 				<% if(feeders != undefined){ %>
-					<ul>
-						<%feeders.forEach( function (entry){%>
-							<li class = "feeder"> <%-entry.User.username%> </li>
-							<div class = "feeders_feed">
-								<div class="feeder-pop">
-									<% entry.arrayOfArticles.forEach( function(article){ %>
-										<div class = "story">
-											<div class="story_container">
-												<a href= <%= article.link %> ><h2> <%-article.title%> | <%=article.meta.title%> </h2></a>
-												<p> <%- article.summary %>  </p>
-												<p class = "timestamp"> <%= article.pubdate %> </p>
-											</div>
-										</div>
-									<%});%>
-								</div> 
+					<%feeders.forEach( function (entry){%>
+					<button id="feeder" class="feeder" onclick= <%- "'feeder(" + entry.User.uid + ")'"%> ><%-entry.User.username%></button>
+						<div class = "feeders_feed" id="feeders_feed">
+							<div class="feeder-pop" id="feeder-pop">
 							</div>
-							<% }); %>
-					</ul>
-				<%} else {%>
+						</div>
+					<br>
+
+					<% }); %>
+					<% } else { %>
 					<p class="message"> You are not subscribed to any feeders </p>
-				<%}%>
-			
+					<% } %>
+
 			</div>
-		</div>
-		<em>
+				<em>
 		<div class="pop-up">
 			<form>Filter Settings<br><input id="name_filter" type="text" name="filterName" value="filter"><br>Sources: <br>
 				<div id = "filter_checkbox">
@@ -144,9 +129,12 @@
 			</form>	
 		</div>
 	</em>
-
-
-
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="farbtastic/farbtastic.js"></script>
 		<script type="text/javascript" src="/javascripts/index.js"></script>
+		<script type="text/javascript" src="/javascripts/ajax.js"></script>
+
+
+
 	</body>
 </html>
