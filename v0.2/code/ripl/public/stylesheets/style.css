@@ -33,18 +33,18 @@ html, body {
 	padding-top: 1%;
 	width: 5%;
 	background-color: #6ac;
-	/*box-shadow: 1px 0px 1px rgba(0,0,0,0.25);*/
 }
 
 #nav button {
-	margin: 15% 10% 0 10%;
+	margin: 0% 10% 15% 10%;
 	display: block;
 	width: 75%;
 	height: 7.5%;
 	color: white;
-	background-color: transparent;
+	background-color: #69c;
 	border: none;
 	border-radius: 2px;
+	font-size: 0.5em;
 	cursor: pointer;
 }
 
