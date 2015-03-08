@@ -1,6 +1,7 @@
 	
 
 function feeder(id){
+  console.log('eggs');
 
  $.ajax({
     type : 'POST',
@@ -35,18 +36,23 @@ function newFeeder(){
     var html = "";
     $("input[name='newFeeder'").val('');
     // if( $('div#nextfeed p.message') === undefined){
-      html = '<button id="feeder" class="feeder" onclick= "feeder(' + data.newFeederID + ')">' + newFeeder + '</button>';
+      html = '<button id="feeder" class="feeder" name= "' + newFeeder + '" onclick= "feeder(' + data.newFeederID + ')">' + newFeeder + '</button>';
       html = html + "<div class = 'feeders_feed' id='feeders_feed'>";
       html = html + "<div class='feeder-pop' id='feeder-pop'>";
       html = html + "</div>";
       html = html + "</div> <br>";
-    if($('div#nextfeed p.message').length === 0){    
+    if($('div#nextfeed p.message').length === 0){   
+      console.log('something'); 
       $('div#nextfeed').append(html);
+      // $("div[name='"+newFeeder + "'").bind('click', feeder(data.newFeederID));
+      
     }
     else{
       $('div#nextfeed').empty();
       html = "<form action='/logout'><button id='logout' class='logout_button'>Logout</button></form>" + html;
       $('div#nextfeed').append(html);
+
+
     }
 
 
