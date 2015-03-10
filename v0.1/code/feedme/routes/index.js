@@ -183,14 +183,18 @@ router.post('/newFeeder', function(req, res){
 });
 
 router.post('/feeder', function(req, res){
+
 	var id = req.body.feederID;
 	db.processQuery('get user sources', [id], function (err, sourceArray){
 		var tempArray = [];
+
 		sourceArray.forEach ( function (entry){
 		tempArray.push(entry.sourcelink);
 		});
+
 		rss.feed(tempArray, undefined, function (finalArticles){
 			res.json({articles : finalArticles});
+			
 		});
 	});
 });

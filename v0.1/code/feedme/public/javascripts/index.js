@@ -324,6 +324,7 @@ $('.pop-up').click(function(e){
 }
 
 $('.feeder').click(function(e){
+  console.log($(this));
 	if($(this).next('.feeders_feed').hasClass('active')){
 	$('.feeders_feed').removeClass('active');
 }
@@ -346,7 +347,7 @@ $('#feeder_back').click(function(){
 });
 
 
-$('document').ready(function() {
-setColors();
-});
+// $('document').ready(function() {
+// setColors();
+// });
 
